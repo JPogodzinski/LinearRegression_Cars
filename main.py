@@ -35,7 +35,8 @@ cars_dev.drop('brand', inplace=True, axis=1)
 X_dev = pd.DataFrame(cars_dev)
 
 Y_dev_predicted = model.predict(X_dev)
-pd.DataFrame(Y_dev_predicted).to_csv('dev-0/out.tsv', sep='\t', index=False)
+print(Y_dev_predicted)
+pd.DataFrame(Y_dev_predicted).to_csv('dev-0/out.tsv', sep='\t', index=False, header=False)
 
 
 cars_test=pd.read_csv('test-A/in.tsv', sep='\t', names=names)
@@ -44,7 +45,7 @@ cars_test.drop('brand', inplace=True, axis=1)
 X_test = pd.DataFrame(cars_test)
 
 Y_test_predicted = model.predict(X_test)
-pd.DataFrame(Y_test_predicted).to_csv('test-A/out.tsv', sep='\t', index=False)
+pd.DataFrame(Y_test_predicted).to_csv('test-A/out.tsv', sep='\t', index=False, header=False)
 
 error = np.sqrt(mean_squared_error(Y_dev, Y_dev_predicted))
 print(error)
