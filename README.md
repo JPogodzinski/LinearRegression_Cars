@@ -1,8 +1,9 @@
 
 Cars challenge
 ==============
+Task done during Information Extraction course on AMU IT Masters Studies
 
-Predict the price of a car.
+Predict the price of a car using linear regression.
 
 The following features are available:
 
